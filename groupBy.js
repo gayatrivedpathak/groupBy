@@ -50,11 +50,11 @@ const groupBy = function (elements) {
 };
 
 const main = function () {
-  // console.log(groupBy([1, 2, 1]));
-  // console.log(groupBy([1, 2, 3]));
-  // console.log(groupBy([2, 2, 3]));
+  console.log(groupBy([1, 2, 1]));
+  console.log(groupBy([1, 2, 3]));
+  console.log(groupBy([2, 2, 3]));
   console.log(groupBy([[2, 2], 3, 3, [2, 2], 1]));
-  // console.log(groupBy([[2, 2], 3, [2, 2]]));
+  console.log(groupBy([[2, 2], 3, [2, 2]]));
   console.log(groupBy([[2, 2], 3, [2, 2], 3]));
 };
 
