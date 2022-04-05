@@ -1,3 +1,10 @@
+const areEqual = function (item1, item2) {
+  if (areBothArrays(item1, item2)) {
+    return areArraysSimilar(item1, item2);
+  }
+  return item1 === item2;
+};
+
 const areArraysSimilar = function (array1, array2) {
   for (let index = 0; index < array1.length; index++) {
     if (array1[index] !== array2[index]) {
@@ -30,14 +37,8 @@ const areBothArrays = function (array1, array2) {
 const similarElements = function (elements, itemIndex) {
   const group = [];
   for (let pos = itemIndex; pos < elements.length; pos++) {
-    if (areBothArrays(elements[pos], elements[itemIndex])) {
-      if (areArraysSimilar(elements[pos], elements[itemIndex])) {
-        group.push(elements[pos]);
-      }
-    } else {
-      if (elements[pos] === elements[itemIndex]) {
-        group.push(elements[pos]);
-      }
+    if (areEqual(elements[pos], elements[itemIndex])) {
+      group.push(elements[pos]);
     }
   }
   return group;
