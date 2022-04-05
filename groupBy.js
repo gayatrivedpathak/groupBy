@@ -40,13 +40,13 @@ const similarElements = function (elements, itemIndex) {
 };
 
 const groupBy = function (elements) {
-  const similarGroups = [];
+  const similarElementsGroup = [];
   for (let index = 0; index < elements.length; index++) {
     if (notOccured(elements[index], elements.slice(0, index))) {
-      similarGroups.push(similarElements(elements, index));
+      similarElementsGroup.push(similarElements(elements, index));
     }
   }
-  return similarGroups;
+  return similarElementsGroup;
 };
 
 const main = function () {
