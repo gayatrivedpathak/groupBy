@@ -23,10 +23,14 @@ const notOccured = function (item, elements) {
   return !elements.includes(item);
 };
 
+const areBothArrays = function (array1, array2) {
+  return Array.isArray(array1) && Array.isArray(array2);
+};
+
 const similarElements = function (elements, itemIndex) {
   const group = [];
   for (let pos = itemIndex; pos < elements.length; pos++) {
-    if (Array.isArray(elements[pos]) && Array.isArray(elements[itemIndex])) {
+    if (areBothArrays(elements[pos], elements[itemIndex])) {
       if (areArraysSimilar(elements[pos], elements[itemIndex])) {
         group.push(elements[pos]);
       }
